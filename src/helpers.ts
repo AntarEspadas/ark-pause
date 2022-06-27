@@ -1,6 +1,6 @@
 export async function setServerPause(paused: boolean) {
-    const host = import.meta.env.VITE_HOST
-    const port = import.meta.env.VITE_PORT
+    const host = import.meta.env.VITE_IPC_HOST
+    const port = import.meta.env.VITE_IPC_PORT
     const endpoint = paused ? "pause" : "play"
     const response = await fetch(`http://${host}:${port}/${endpoint}`)
     if (response.status === 200)
